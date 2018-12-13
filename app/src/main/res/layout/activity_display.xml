@@ -2,10 +2,9 @@
 <layout>
 
     <data>
-
         <variable
                 name="user"
-                type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.viewmodel.MainViewModel" />
+                type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.data.User" />
 
     </data>
 
