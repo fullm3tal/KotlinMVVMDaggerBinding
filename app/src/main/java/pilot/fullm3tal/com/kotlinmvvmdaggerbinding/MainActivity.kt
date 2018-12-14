@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.viewModel = viewModel
 
+
+
         viewModel.clickResults.observe(this, Observer {
             Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show()
             binding.viewModel=viewModel

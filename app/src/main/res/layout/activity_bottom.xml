@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="userDetails"
-            type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.data.UserDetails" />
+            type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.data.User" />
 
         <variable
             name="clickEvent"
@@ -22,19 +24,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="5">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="3"
                 android:text="House Number" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
+                android:layout_weight="2"
                 android:text="@={userDetails.houseNumber}" />
 
         </LinearLayout>
@@ -42,30 +46,67 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="5">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:layout_weight="3"
+                android:text="Marital Status" />
+
+            <Spinner
+                android:id="@+id/marital_status_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="2"
+                android:entries="@array/marital"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:selectedValue="@={userDetails.quantity}" />
+
+            <!--<Spinner-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:layout_weight="2"-->
+            <!--android:entries="@array/marital"-->
+            <!--app:maritalStatus="@={userDetails.maritalStatus}" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="3"
                 android:text="Pincode" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
+                android:layout_weight="2"
                 android:text="@={userDetails.pincode}" />
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
 
             <Button
                 android:id="@+id/clear_button"
@@ -75,6 +116,15 @@
                 android:layout_weight="1"
                 android:onClick="@{()->clickEvent.onClearButtonClicked()}"
                 android:text="CLEAR" />
+
+            <Button
+                android:id="@+id/push_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:onClick="@{()->clickEvent.onPushButtonClicked()}"
+                android:text="PUSH" />
 
             <Button
                 android:id="@+id/display_button"

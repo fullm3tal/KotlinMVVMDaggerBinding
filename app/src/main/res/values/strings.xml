@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">KotlinMVVMDaggerBinding</string>
+
+    <string-array name="marital">
+
+        <item>Select</item>
+        <item>Married</item>
+        <item>Unmarried</item>
+        <item>Divorced</item>
+        <item>Widowed</item>
+    </string-array>
+
 </resources>

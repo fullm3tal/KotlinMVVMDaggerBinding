@@ -1,6 +1,7 @@
 package pilot.fullm3tal.com.kotlinmvvmdaggerbinding
 
 import android.app.Application
+import pilot.fullm3tal.com.kotlinmvvmdaggerbinding.db.UserDatabase
 import pilot.fullm3tal.com.kotlinmvvmdaggerbinding.di.component.AppComponent
 import pilot.fullm3tal.com.kotlinmvvmdaggerbinding.di.component.DaggerAppComponent
 
@@ -13,6 +14,10 @@ class KotlinApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         applicationComponent.inject(this)
+
+        UserDatabase.getInstance(this)
+
+
     }
 
 

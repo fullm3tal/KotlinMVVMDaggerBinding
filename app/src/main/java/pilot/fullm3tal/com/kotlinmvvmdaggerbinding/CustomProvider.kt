@@ -11,7 +11,7 @@ class CustomProvider: ViewModelProvider.Factory {
         return if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             MainViewModel() as T
         } else {
-            throw IllegalArgumentException("ViewModel Not Found")
+            throw IllegalArgumentException("ViewModel Not Found") as Throwable
         }
 
     }

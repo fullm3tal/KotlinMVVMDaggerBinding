@@ -3,129 +3,135 @@
 
     <data>
         <variable
-                name="user"
-                type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.data.User" />
+            name="user"
+            type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.data.User" />
     </data>
 
-<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <TextView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:layout_weight="3"
                 android:text="Name" />
 
-
-        <EditText
+            <EditText
                 android:id="@+id/tv_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
-                android:text="@={user.name}"/>
+                android:layout_weight="1"
+                android:text="@={user.name}" />
 
-    </LinearLayout>
+        </LinearLayout>
 
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <TextView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:layout_weight="3"
                 android:text="Age" />
 
-
-        <EditText
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
-                android:text="@={user.age}"/>
+                android:layout_weight="1"
+                android:text="@={user.age}" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <TextView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:layout_weight="3"
                 android:text="Sex" />
 
 
-        <EditText
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
-                android:text="@={user.sex}"/>
+                android:layout_weight="1"
+                android:text="@={user.sex}" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <TextView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:layout_weight="3"
                 android:text="Roll No." />
 
-
-        <EditText
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
-                android:text="@={user.rollNumber}"/>
+                android:layout_weight="1"
+                android:text="@={user.rollNumber}" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <TextView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:layout_weight="3"
                 android:text="Height" />
 
-        <EditText
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
-                android:text="@={user.height}"/>
+                android:layout_weight="1"
+                android:text="@={user.height}" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
-
-
-</LinearLayout>
 
 </layout>

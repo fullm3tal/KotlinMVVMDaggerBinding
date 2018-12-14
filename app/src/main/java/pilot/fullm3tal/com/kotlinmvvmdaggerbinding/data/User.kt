@@ -8,5 +8,8 @@ class User(
     var age: String,
     var sex: String,
     var rollNumber: String,
-    var height: String
+    var height: String,
+    var houseNumber: String,
+    var quantity: String,
+    var pincode: String
 )

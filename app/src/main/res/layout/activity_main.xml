@@ -7,38 +7,63 @@
 
         <variable
             name="viewModel"
-            type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.viewmodel.MainViewModel"/>
+            type="pilot.fullm3tal.com.kotlinmvvmdaggerbinding.viewmodel.MainViewModel" />
 
     </data>
 
-    <LinearLayout
-
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         tools:context=".MainActivity">
 
         <include
+            android:id="@+id/include_top"
             layout="@layout/activity_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:user="@={viewModel.user}" />
 
         <TextView
+            android:id="@+id/tv_other_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:text="Other Details" />
+            android:layout_marginTop="5dp"
+            android:text="Other Details"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_top" />
 
         <include
+            android:id="@+id/include_bottom"
             layout="@layout/activity_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:userDetails="@={viewModel.userDetails}"
-            app:clickEvent="@={viewModel}"/>
+            app:clickEvent="@={viewModel}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_other_details"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:userDetails="@={viewModel.user}" />
 
-    </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_person_add_black_24dp"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/include_bottom"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="@color/colorAccent"
+            android:onClick="@{()->viewModel.onFabButtonClicked()}"/>
 
+    </android.support.constraint.ConstraintLayout>
 
 </layout>
